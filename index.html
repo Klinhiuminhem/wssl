@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EverWatch | Battery-Free Environmental Sensing</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Font (optional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-inner container">
+    <div class="logo" onclick="scrollToAbout()">
+      <span class="logo-mark">
+        <img src="/assets/logo wssl.png" alt="Logo">
+      </span>
+      Wireless and Sensor Systems Lab (WSSL)
+    </div>
+      <nav class="nav-links">
+        <a href="#problem">Problem</a>
+        <a href="#solution">Our Approach</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#results">Results</a>
+        <a href="#team">Team</a>
+      </nav>
+      <a href="#paper" class="nav-btn">View Paper</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="hero-label">Research Prototype · 2025</p>
+          <h1>Turning Old Smartphones into<br>Battery-Free Environmental Sensors</h1>
+          <p class="hero-subtitle">
+            We explore how a retired smartphone can continuously monitor its surroundings and send useful data — using wind and solar energy rather than its internal battery.
+          </p>
+          <div class="hero-actions">
+            <a href="#workflow" class="btn primary">See how it works</a>
+            <a href="#paper" class="btn primary">Read the full study</a>
+          </div>
+          <div class="hero-tags">
+            <span>Energy Harvesting</span>
+            <span>IoT</span>
+            <span>Upcycling Devices</span>
+            <span>Environmental Monitoring</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="prototype-slider">
+            <div class="prototype-track">
+              <img src="assets/photo1.png" alt="Prototype Photo 1">
+              <img src="assets/photo2.png" alt="Prototype Photo 2">
+              <img src="assets/photo3.png" alt="Prototype Photo 3">
+            </div>
+            <div class="prototype-dots">
+              <div class="p-dot active"></div>
+              <div class="p-dot"></div>
+              <div class="p-dot"></div>
+            </div>
+          </div>
+          <div class="hero-card-footer">
+            <p class="note">
+              This site is a visual summary of our scientific research.  
+              The prototype is real — the data and pipeline below are from our experiments.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section class="section" id="problem">
+      <div class="container split">
+        <div class="section-text">
+          <h2>The Problem</h2>
+          <p>
+            Environmental monitoring often requires <strong>dense sensor networks</strong> that are
+            expensive, power-hungry, and difficult to maintain. In many regions, replacing
+            or charging batteries is the biggest barrier to long-term deployment.
+          </p>
+          <p>
+            Meanwhile, millions of smartphones are discarded every year. Most of them still
+            have functional sensors — microphones, cameras, accelerometers — but their batteries
+            are degraded or dead.
+          </p>
+        </div>
+        <div class="section-card">
+          <h3>Key Challenges</h3>
+          <ul class="bullet-list">
+            <li>How can we operate sensing hardware without a traditional battery?</li>
+            <li>How much useful data can a “dead” phone still provide?</li>
+            <li>Can we build a stable, low-maintenance system from e-waste?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section class="section alt" id="solution">
+      <div class="container split">
+        <div class="section-card">
+          <h3>Our Idea</h3>
+          <p>
+            We treat an old smartphone as a <strong>modular sensing unit</strong> powered by
+            external energy harvesting modules instead of its original battery.
+          </p>
+          <p>
+            The device captures raw environmental signals — such as light, and motion —
+            and forwards compact summaries to a lightweight server or local hub.
+          </p>
+        </div>
+        <div class="section-text">
+          <h2>Our Approach</h2>
+          <div class="pill-grid">
+            <div class="pill">
+              <h4>1. Upcycle</h4>
+              <p>Use retired smartphones as sensor nodes instead of buying new hardware.</p>
+            </div>
+            <div class="pill">
+              <h4>2. Harvest</h4>
+              <p>Replace the phone battery with solar / RF / supercapacitor-based power input.</p>
+            </div>
+            <div class="pill">
+              <h4>3. Sense</h4>
+              <p>Run lightweight sensing tasks: basic image capture, motion patterns.</p>
+            </div>
+            <div class="pill">
+              <h4>4. Report</h4>
+              <p>Send aggregated metrics or event alerts to a monitoring dashboard.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKFLOW -->
+    <section class="section" id="workflow">
+      <div class="container">
+        <h2 class="section-title">System Workflow</h2>
+        <p class="section-intro">
+          Below is the high-level pipeline that connects the physical environment to
+          human-readable insights — using only an old phone and minimal external hardware.
+        </p>
+
+        <div class="workflow">
+          <div class="workflow-step">
+            <span class="step-badge">01</span>
+            <h3>Environment</h3>
+            <p>
+              Ambient light, temperature, and motion around the device.
+            </p>
+          </div>
+          <div class="workflow-arrow"></div>
+
+          <div class="workflow-step">
+            <span class="step-badge">02</span>
+            <h3>Passive Sensing</h3>
+            <p>
+              Phone sensors capture raw data (audio snippets, low-res frames, IMU samples).
+            </p>
+          </div>
+          <div class="workflow-arrow"></div>
+
+          <div class="workflow-step">
+            <span class="step-badge">03</span>
+            <h3>On-Device Processing</h3>
+            <p>
+              Lightweight models or thresholds detect events (e.g., bird calls, noise spikes).
+            </p>
+          </div>
+          <div class="workflow-arrow"></div>
+
+          <div class="workflow-step">
+            <span class="step-badge">04</span>
+            <h3>Data Uplink</h3>
+            <p>
+              Compressed summaries or labels are transmitted when energy is available.
+            </p>
+          </div>
+          <div class="workflow-arrow"></div>
+
+          <div class="workflow-step">
+            <span class="step-badge">05</span>
+            <h3>Dashboard & Research</h3>
+            <p>
+              Researchers visualize time series, event frequency, and environmental trends.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="section alt" id="results">
+      <div class="container split">
+        <div class="section-text">
+          <h2>Early Results</h2>
+          <p>
+            In our initial experiments, a single recycled smartphone mounted outdoors and
+            powered by a small solar panel was able to collect data continuously over
+            <strong>multiple weeks</strong>, without any manual charging.
+          </p>
+          <p>
+            We validate that even in low-power conditions, the device can:
+          </p>
+          <ul class="bullet-list">
+            <li>Capture acoustic patterns (e.g., traffic noise, bird activity).</li>
+            <li>Detect motion or vibration events via IMU sensors.</li>
+            <li>Upload summarized data whenever sufficient energy is available.</li>
+          </ul>
+        </div>
+        <div class="section-card">
+          <h3>Highlighted Metrics</h3>
+          <ul class="stats compact">
+            <li>
+              <span class="stat-label">Deployment duration</span>
+              <span class="stat-value">> 30 days</span>
+            </li>
+            <li>
+              <span class="stat-label">Manual charging</span>
+              <span class="stat-value">0 times</span>
+            </li>
+            <li>
+              <span class="stat-label">Average events / day</span>
+              <span class="stat-value">120–300</span>
+            </li>
+            <li>
+              <span class="stat-label">Device cost</span>
+              <span class="stat-value">E-waste + <$20 harvest</span>
+            </li>
+          </ul>
+          <p class="small-note">
+            *All numbers here are illustrative placeholders — replace with your real experiment data.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAPER / DOWNLOAD -->
+    <section class="section" id="paper">
+      <div class="container center">
+        <h2>Read the Full Paper</h2>
+        <p class="section-intro">
+          For detailed methodology, experimental setup, and quantitative results,
+          please refer to our full scientific manuscript.
+        </p>
+        <div class="download-card">
+          <p class="paper-title">“Battery-Free Environmental Monitoring with Repurposed Smartphones”</p>
+          <p class="paper-meta">Authors: [Your Name] · [Co-authors] · 2025</p>
+          <div class="download-actions">
+            <a href="#" class="btn primary">Download PDF</a>
+            <a href="#" class="btn ghost">View on arXiv / Journal</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="section alt" id="team">
+      <div class="container center">
+        <h2>Research Team</h2>
+        <p class="section-intro">
+          This project is part of an ongoing effort to reduce e-waste and build sustainable sensing systems.
+        </p>
+        <section class="advisor-card">
+            <div class="advisor-container">
+
+              <div class="advisor-info">
+                <h1 class="advisor-name">Dr. VP Nguyen</h1>
+                <p class="advisor-title">Assistant Professor (on leave Fall 2025)</p>
+
+                <div class="advisor-block">
+                  <h3>CONTACT</h3>
+                  <p class="advisor-email">vp.nguyen@cs.umass.edu</p>
+                </div>
+
+                <div class="advisor-block">
+                  <h3>LOCATION</h3>
+                  <p>Room A323</p>
+                  <p>Lederle Graduate Research Center Lowrise</p>
+                  <p>740 N. Pleasant Street</p>
+                  <p>Amherst, MA 01003</p>
+                  <p>United States</p>
+                </div>
+              </div>
+
+              <div class="advisor-photo">
+                <img src="/assets/vpnguyen.jpeg" alt="Advisor Photo">
+              </div>
+            </div>
+        </section>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="avatar">G</div>
+            <h3>Gary</h3>
+            <p>Hardware & Power Harvesting</p>
+          </div>
+          <div class="team-card">
+            <div class="avatar">P</div>
+            <h3>Phoebe</h3>
+            <p>Hardware & Power Harvesting</p>
+          </div>
+          <div class="team-card">
+            <div class="avatar">D</div>
+            <h3>Duc Nghiem</h3>
+            <p>Data Analysis & Modelling</p>
+          </div>
+          <div class="team-card">
+            <div class="avatar">L</div>
+            <h3>Linh Dang</h3>
+            <p>Data Analysis & Modelling</p>
+          </div>
+          <div class="team-card">
+            <div class="avatar">L</div>
+            <h3>Lucas</h3>
+            <p>Data Analysis & Modelling</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ABOUT THE LAB -->
+    <section id="about-lab" class="lab-about-section">
+      <div id="lab-about" class="lab-about-section">
+        <div class="lab-about-inner">
+          <h2>About Wireless and Sensor Systems Lab</h2>
+
+          <p>
+            WSSL's broad research interests are in the areas of
+            <b>AI-powered mobile/wearable computing</b> and sustainable computing.
+            Our research agenda focuses on <b>Sustainable Autonomous Things (SATs)</b>
+            for realizing the vision of:
+          </p>
+
+          <ul>
+            <li>the Internet of Sustainable Medical Things</li>
+            <li>the Internet of Sustainable Living Things</li>
+            <li>and the Internet of Sustainable Flying Things</li>
+          </ul>
+
+          <p>
+            Our work is interdisciplinary in nature, combining innovations in sensor
+            and sensing system development, algorithms, data analytics, signal processing,
+            hardware, and firmware optimization to invent:
+          </p>
+
+          <ol>
+            <li>
+              A new class of medical devices that can continuously and unobtrusively collect
+              novel and important health data in non-clinical settings.
+            </li>
+            <li>
+              A new class of living sensors that can live with plants and animals.
+            </li>
+            <li>
+              A new class of unmanned aerial vehicles requiring extremely low maintenance.
+            </li>
+            <li>
+              We are also interested in sustainable quantum computing. Together with
+              Berkeley Lab, we have made exciting progress.
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© 2025 UMass Amherst - Wireless and Sensor Systems Laboratory · Built to share our research with the world.</p>
+      <p class="footer-small">
+        This is a research demo page and not a commercial product.
+      </p>
+    </div>
+  </footer>
+  <script>
+  function scrollToAbout() {
+    document.querySelector("#about-lab").scrollIntoView({
+      behavior: "smooth"
+    });
+  }
+  </script>
+  <script>
+  let index = 0;
+  const track = document.querySelector('.prototype-track');
+  const dots = document.querySelectorAll('.p-dot');
+
+  function showSlide(i) {
+    index = i;
+    track.style.transform = `translateX(-${i * 100}%)`;
+
+    dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => showSlide(i));
+  });
+
+  // Auto slide every 3s
+  setInterval(() => {
+    index = (index + 1) % dots.length;
+    showSlide(index);
+  }, 3000);
+  </script>
+
+
+</body>
+</html>
