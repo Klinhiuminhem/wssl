@@ -3,35 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EverWatch | Battery-Free Environmental Sensing</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>WSSL | Battery-Free Environmental Sensing</title>
+  <meta name="description" content="Turning retired smartphones into battery-free environmental sensors — energy harvesting, upcycling, and lightweight on-device processing.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="WSSL | Battery-Free Environmental Sensing">
+  <meta property="og:description" content="Turning retired smartphones into battery-free environmental sensors — energy harvesting, upcycling, and lightweight on-device processing.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="WSSL">
+  <link rel="icon" href="assets/favicon.ico">
 
+  <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="navbar">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="navbar" role="banner">
     <div class="nav-inner container">
-    <div class="logo" onclick="scrollToAbout()">
-      <span class="logo-mark">
-        <img src="/assets/logo wssl.png" alt="Logo">
-      </span>
-      Wireless and Sensor Systems Lab (WSSL)
-    </div>
-      <nav class="nav-links">
+      <div class="logo" onclick="scrollToAbout()" role="button" aria-label="About Wireless and Sensor Systems Lab">
+        <span class="logo-mark">
+          <img src="assets/logo-wssl.png" alt="WSSL logo">
+        </span>
+        Wireless and Sensor Systems Lab (WSSL)
+      </div>
+
+      <nav class="nav-links" role="navigation" aria-label="Main navigation">
         <a href="#problem">Problem</a>
         <a href="#solution">Our Approach</a>
         <a href="#workflow">Workflow</a>
         <a href="#results">Results</a>
         <a href="#team">Team</a>
       </nav>
-      <a href="#paper" class="nav-btn">View Paper</a>
+
+      <a href="#paper" class="nav-btn btn primary">View Paper</a>
     </div>
   </header>
 
-  <main>
-    <!-- HERO -->
+  <main id="main" role="main">
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-text">
@@ -51,30 +61,32 @@
             <span>Environmental Monitoring</span>
           </div>
         </div>
+
         <div class="hero-card">
-          <div class="prototype-slider">
+          <div class="prototype-slider" aria-roledescription="carousel" aria-label="Prototype photos">
             <div class="prototype-track">
-              <img src="assets/photo1.png" alt="Prototype Photo 1">
-              <img src="assets/photo2.png" alt="Prototype Photo 2">
-              <img src="assets/photo3.png" alt="Prototype Photo 3">
+              <img src="assets/photo1.png" alt="Prototype photo 1" loading="eager">
+              <img src="assets/photo2.png" alt="Prototype photo 2" loading="lazy">
+              <img src="assets/photo3.png" alt="Prototype photo 3" loading="lazy">
             </div>
-            <div class="prototype-dots">
-              <div class="p-dot active"></div>
-              <div class="p-dot"></div>
-              <div class="p-dot"></div>
+
+            <div class="prototype-dots" role="tablist" aria-label="Slides">
+              <button class="p-dot active" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+              <button class="p-dot" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+              <button class="p-dot" role="tab" aria-selected="false" aria-label="Slide 3"></button>
             </div>
           </div>
+
           <div class="hero-card-footer">
             <p class="note">
-              This site is a visual summary of our scientific research.  
-              The prototype is real — the data and pipeline below are from our experiments.
+              This site is a visual summary of our scientific research. The prototype is real — the data and pipeline below are from our experiments.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROBLEM -->
+    <!-- problem -->
     <section class="section" id="problem">
       <div class="container split">
         <div class="section-text">
@@ -101,7 +113,7 @@
       </div>
     </section>
 
-    <!-- SOLUTION -->
+    <!-- solution -->
     <section class="section alt" id="solution">
       <div class="container split">
         <div class="section-card">
@@ -139,7 +151,7 @@
       </div>
     </section>
 
-    <!-- WORKFLOW -->
+    <!-- workflow -->
     <section class="section" id="workflow">
       <div class="container">
         <h2 class="section-title">System Workflow</h2>
@@ -152,51 +164,41 @@
           <div class="workflow-step">
             <span class="step-badge">01</span>
             <h3>Environment</h3>
-            <p>
-              Ambient light, temperature, and motion around the device.
-            </p>
+            <p>Ambient light, temperature, and motion around the device.</p>
           </div>
           <div class="workflow-arrow"></div>
 
           <div class="workflow-step">
             <span class="step-badge">02</span>
             <h3>Passive Sensing</h3>
-            <p>
-              Phone sensors capture raw data (audio snippets, low-res frames, IMU samples).
-            </p>
+            <p>Phone sensors capture raw data (audio snippets, low-res frames, IMU samples).</p>
           </div>
           <div class="workflow-arrow"></div>
 
           <div class="workflow-step">
             <span class="step-badge">03</span>
             <h3>On-Device Processing</h3>
-            <p>
-              Lightweight models or thresholds detect events (e.g., bird calls, noise spikes).
-            </p>
+            <p>Lightweight models or thresholds detect events (e.g., bird calls, noise spikes).</p>
           </div>
           <div class="workflow-arrow"></div>
 
           <div class="workflow-step">
             <span class="step-badge">04</span>
             <h3>Data Uplink</h3>
-            <p>
-              Compressed summaries or labels are transmitted when energy is available.
-            </p>
+            <p>Compressed summaries or labels are transmitted when energy is available.</p>
           </div>
           <div class="workflow-arrow"></div>
 
           <div class="workflow-step">
             <span class="step-badge">05</span>
             <h3>Dashboard & Research</h3>
-            <p>
-              Researchers visualize time series, event frequency, and environmental trends.
-            </p>
+            <p>Researchers visualize time series, event frequency, and environmental trends.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- RESULTS -->
+    <!-- results -->
     <section class="section alt" id="results">
       <div class="container split">
         <div class="section-text">
@@ -206,9 +208,7 @@
             powered by a small solar panel was able to collect data continuously over
             <strong>multiple weeks</strong>, without any manual charging.
           </p>
-          <p>
-            We validate that even in low-power conditions, the device can:
-          </p>
+          <p>We validate that even in low-power conditions, the device can:</p>
           <ul class="bullet-list">
             <li>Capture acoustic patterns (e.g., traffic noise, bird activity).</li>
             <li>Detect motion or vibration events via IMU sensors.</li>
@@ -232,24 +232,19 @@
             </li>
             <li>
               <span class="stat-label">Device cost</span>
-              <span class="stat-value">E-waste + <$20 harvest</span>
+              <span class="stat-value">E-waste + &lt;$20 harvest</span>
             </li>
           </ul>
-          <p class="small-note">
-            *All numbers here are illustrative placeholders — replace with your real experiment data.
-          </p>
+          <p class="small-note">*All numbers here are illustrative placeholders — replace with your real experiment data.</p>
         </div>
       </div>
     </section>
 
-    <!-- PAPER / DOWNLOAD -->
+    <!-- download -->
     <section class="section" id="paper">
       <div class="container center">
         <h2>Read the Full Paper</h2>
-        <p class="section-intro">
-          For detailed methodology, experimental setup, and quantitative results,
-          please refer to our full scientific manuscript.
-        </p>
+        <p class="section-intro">For detailed methodology, experimental setup, and quantitative results, please refer to our full scientific manuscript.</p>
         <div class="download-card">
           <p class="paper-title">“Battery-Free Environmental Monitoring with Repurposed Smartphones”</p>
           <p class="paper-meta">Authors: [Your Name] · [Co-authors] · 2025</p>
@@ -261,155 +256,190 @@
       </div>
     </section>
 
-    <!-- TEAM -->
+    <section class="donor-section">
+      <h2 class="donor-title">Our Donors</h2>
+      <div class="donor-grid">
+        <div class="donor-card">
+          <img src="assets/donor1.jpg" alt="Donor" loading="lazy">
+          <h3>Donor Name</h3>
+          <p>Description</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- team -->
     <section class="section alt" id="team">
       <div class="container center">
         <h2>Research Team</h2>
-        <p class="section-intro">
-          This project is part of an ongoing effort to reduce e-waste and build sustainable sensing systems.
-        </p>
-        <section class="advisor-card">
-            <div class="advisor-container">
+        <p class="section-intro">This project is part of an ongoing effort to reduce e-waste and build sustainable sensing systems.</p>
 
-              <div class="advisor-info">
-                <h1 class="advisor-name">Dr. VP Nguyen</h1>
-                <p class="advisor-title">Assistant Professor (on leave Fall 2025)</p>
+        <section class="advisor-card" aria-labelledby="advisor-heading">
+          <div class="advisor-container">
+            <div class="advisor-info">
+              <h1 id="advisor-heading" class="advisor-name">Dr. VP Nguyen</h1>
+              <p class="advisor-title">Assistant Professor (on leave Fall 2025)</p>
 
-                <div class="advisor-block">
-                  <h3>CONTACT</h3>
-                  <p class="advisor-email">vp.nguyen@cs.umass.edu</p>
-                </div>
-
-                <div class="advisor-block">
-                  <h3>LOCATION</h3>
-                  <p>Room A323</p>
-                  <p>Lederle Graduate Research Center Lowrise</p>
-                  <p>740 N. Pleasant Street</p>
-                  <p>Amherst, MA 01003</p>
-                  <p>United States</p>
-                </div>
+              <div class="advisor-block">
+                <h3>CONTACT</h3>
+                <p class="advisor-email">vp.nguyen@cs.umass.edu</p>
               </div>
 
-              <div class="advisor-photo">
-                <img src="/assets/vpnguyen.jpeg" alt="Advisor Photo">
+              <div class="advisor-block">
+                <h3>LOCATION</h3>
+                <p>Room A323</p>
+                <p>Lederle Graduate Research Center Lowrise</p>
+                <p>740 N. Pleasant Street</p>
+                <p>Amherst, MA 01003</p>
+                <p>United States</p>
               </div>
             </div>
+
+            <div class="advisor-photo">
+              <img src="assets/vpnguyen.jpeg" alt="Dr. VP Nguyen" loading="lazy">
+            </div>
+          </div>
         </section>
+
         <div class="team-grid">
           <div class="team-card">
             <div class="avatar">G</div>
             <h3>Gary</h3>
+            <div class="gary-photo"><img src="assets/gary.png" alt="Gary - Hardware & Power Harvesting" loading="lazy"></div>
             <p>Hardware & Power Harvesting</p>
           </div>
+
           <div class="team-card">
             <div class="avatar">P</div>
             <h3>Phoebe</h3>
+            <div class="phoebe-photo"><img src="assets/phoebe.png" alt="Phoebe - Hardware & Power Harvesting" loading="lazy"></div>
             <p>Hardware & Power Harvesting</p>
           </div>
+
           <div class="team-card">
             <div class="avatar">D</div>
             <h3>Duc Nghiem</h3>
+            <div class="duc-photo"><img src="assets/duc.png" alt="Duc Nghiem - Data Analysis & Modelling" loading="lazy"></div>
             <p>Data Analysis & Modelling</p>
           </div>
+
           <div class="team-card">
             <div class="avatar">L</div>
             <h3>Linh Dang</h3>
+            <div class="linh-photo"><img src="assets/linh.png" alt="Linh Dang - Data Analysis & Modelling" loading="lazy"></div>
             <p>Data Analysis & Modelling</p>
           </div>
+
           <div class="team-card">
             <div class="avatar">L</div>
             <h3>Lucas</h3>
+            <div class="lucas-photo"><img src="assets/lucas.png" alt="Lucas - Data Analysis & Modelling" loading="lazy"></div>
             <p>Data Analysis & Modelling</p>
           </div>
         </div>
       </div>
     </section>
-    <!-- ABOUT THE LAB -->
+
+    <!-- about the lab -->
     <section id="about-lab" class="lab-about-section">
-      <div id="lab-about" class="lab-about-section">
-        <div class="lab-about-inner">
-          <h2>About Wireless and Sensor Systems Lab</h2>
+      <div class="lab-about-inner">
+        <h2>About Wireless and Sensor Systems Lab</h2>
 
-          <p>
-            WSSL's broad research interests are in the areas of
-            <b>AI-powered mobile/wearable computing</b> and sustainable computing.
-            Our research agenda focuses on <b>Sustainable Autonomous Things (SATs)</b>
-            for realizing the vision of:
-          </p>
+        <p>
+          WSSL's broad research interests are in the areas of
+          <b>AI-powered mobile/wearable computing</b> and sustainable computing.
+          Our research agenda focuses on <b>Sustainable Autonomous Things (SATs)</b>
+          for realizing the vision of:
+        </p>
 
-          <ul>
-            <li>the Internet of Sustainable Medical Things</li>
-            <li>the Internet of Sustainable Living Things</li>
-            <li>and the Internet of Sustainable Flying Things</li>
-          </ul>
+        <ul>
+          <li>the Internet of Sustainable Medical Things</li>
+          <li>the Internet of Sustainable Living Things</li>
+          <li>and the Internet of Sustainable Flying Things</li>
+        </ul>
 
-          <p>
-            Our work is interdisciplinary in nature, combining innovations in sensor
-            and sensing system development, algorithms, data analytics, signal processing,
-            hardware, and firmware optimization to invent:
-          </p>
+        <p>
+          Our work is interdisciplinary in nature, combining innovations in sensor
+          and sensing system development, algorithms, data analytics, signal processing,
+          hardware, and firmware optimization to invent:
+        </p>
 
-          <ol>
-            <li>
-              A new class of medical devices that can continuously and unobtrusively collect
-              novel and important health data in non-clinical settings.
-            </li>
-            <li>
-              A new class of living sensors that can live with plants and animals.
-            </li>
-            <li>
-              A new class of unmanned aerial vehicles requiring extremely low maintenance.
-            </li>
-            <li>
-              We are also interested in sustainable quantum computing. Together with
-              Berkeley Lab, we have made exciting progress.
-            </li>
-          </ol>
-        </div>
+        <ol>
+          <li>A new class of medical devices that can continuously and unobtrusively collect novel and important health data in non-clinical settings.</li>
+          <li>A new class of living sensors that can live with plants and animals.</li>
+          <li>A new class of unmanned aerial vehicles requiring extremely low maintenance.</li>
+          <li>We are also interested in sustainable quantum computing. Together with Berkeley Lab, we have made exciting progress.</li>
+        </ol>
       </div>
     </section>
-
-
   </main>
 
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container footer-inner">
       <p>© 2025 UMass Amherst - Wireless and Sensor Systems Laboratory · Built to share our research with the world.</p>
-      <p class="footer-small">
-        This is a research demo page and not a commercial product.
-      </p>
+      <p class="footer-small">This is a research demo page and not a commercial product.</p>
     </div>
   </footer>
+
   <script>
   function scrollToAbout() {
-    document.querySelector("#about-lab").scrollIntoView({
-      behavior: "smooth"
+    const el = document.querySelector("#about-lab");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.prototype-track');
+    const dots = Array.from(document.querySelectorAll('.p-dot'));
+    if (!track || dots.length === 0) return;
+
+    // Respect reduced motion preference
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let index = 0;
+    function showSlide(i) {
+      index = ((i % dots.length) + dots.length) % dots.length;
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((d, idx) => {
+        const active = idx === index;
+        d.classList.toggle('active', active);
+        d.setAttribute('aria-selected', active ? 'true' : 'false');
+        d.setAttribute('tabindex', '0');
+      });
+    }
+
+    // Add keyboard/click handlers to dots
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => showSlide(i));
+      dot.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          showSlide(i);
+        }
+        if (e.key === 'ArrowRight') showSlide(i + 1);
+        if (e.key === 'ArrowLeft') showSlide(i - 1);
+      });
     });
-  }
-  </script>
-  <script>
-  let index = 0;
-  const track = document.querySelector('.prototype-track');
-  const dots = document.querySelectorAll('.p-dot');
 
-  function showSlide(i) {
-    index = i;
-    track.style.transform = `translateX(-${i * 100}%)`;
+    // Auto-slide unless reduced motion
+    let autoTimer = null;
+    function startAuto() {
+      if (reduceMotion) return;
+      stopAuto();
+      autoTimer = setInterval(() => showSlide(index + 1), 3000);
+    }
+    function stopAuto() {
+      if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+    }
 
-    dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
-  }
+    // Pause auto on focus/hover for better UX
+    const slider = document.querySelector('.prototype-slider');
+    slider.addEventListener('mouseenter', stopAuto);
+    slider.addEventListener('mouseleave', startAuto);
+    slider.addEventListener('focusin', stopAuto);
+    slider.addEventListener('focusout', startAuto);
 
-  dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => showSlide(i));
+    // initialize
+    showSlide(0);
+    startAuto();
   });
-
-  // Auto slide every 3s
-  setInterval(() => {
-    index = (index + 1) % dots.length;
-    showSlide(index);
-  }, 3000);
   </script>
-
-
 </body>
 </html>
